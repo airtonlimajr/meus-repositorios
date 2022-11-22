@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Loading = styled.div`
   color: #fff;
@@ -42,11 +42,120 @@ export const Owner = styled.header`
     line-height: 1.4;
     max-width: 400px;
   }
-
 `;
 
-export const BackButton = styled(Link)`  
+export const BackButton = styled(Link)`
   border: 0;
   outline: 0;
   background: transparent;
+`;
+
+export const IssuesList = styled.ul`
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  list-style: none;
+
+  li {
+    display: flex;
+    padding: 15px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid #0d2636;
+    }
+
+    div {
+      flex: 1;
+      margin-left: 15px;
+
+      strong {
+        font-size: 15px;
+
+        a {
+          text-decoration: none;
+          color: #222;
+          transition: 0.3s;
+
+          &:hover {
+            color: #0071db;
+          }
+        }
+
+        span {
+          background: #222;
+          color: #fff;
+          border-radius: 2px;
+
+          font-size: 12px;
+          font-weight: 600;
+          height: 20px;
+          padding: 3px 4px;
+          margin-left: 10px;
+        }
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #000;
+      }
+    }
+  }
+`;
+
+export const PageActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  button {
+    outline: 0;
+    border: 0;
+    background: #222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+`;
+
+export const FilterList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  button {
+    outline: 0;
+    border: 0;
+    background: #222;
+    color: #fff;
+
+    padding: 5px 10px;
+    border-radius: 4px;
+
+    &:nth-child(${(props) => props.active + 1}) {
+      background: #0071db;
+      color: #fff;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
 `;
